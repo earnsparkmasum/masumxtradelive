@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-trading-gold/30 selection:text-white;
+    background-image: radial-gradient(at top right, rgba(59, 130, 246, 0.08) 0px, transparent 50%),
+                      radial-gradient(at bottom left, rgba(251, 191, 36, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+.glass-luxury-panel {
+  background: rgba(3, 7, 18, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.15);
+}
+
+/* Candlestick Animation Background */
+@keyframes raise {
+  0% { transform: translateY(100%) scaleY(0.1); opacity: 0; }
+  10% { opacity: 0.3; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-10%) scaleY(1); opacity: 0; }
+}
+
+.candle-anim {
+  animation: raise 15s linear infinite;
+}
